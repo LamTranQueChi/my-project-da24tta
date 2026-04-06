@@ -1,75 +1,85 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <title>Trang cá nhân</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-    <h1 align="center">Lâm Trần Quế Chi</h1>
-    <h3 align="center">Trang thông tin cá nhân</h3>
+    <h1 class="center">THIẾT KẾ WEB</h1>
+    <h3 class="center">TRANG THÔNG TIN CÁ NHÂN</h3>
 
     <hr>
 
-    <h3>Giới thiệu bản thân</h3>
+    <!-- SCRIPT (đặt cuối body cho chắc chắn) -->
+    <script>
+        function showSection(id) {
+            let sections = document.querySelectorAll(".section");
+            sections.forEach(sec => sec.classList.add("hidden"));
 
-    <table border="1" width="100%" cellpadding="10">
-        <tr>
-            <td width="150">
-                <img src="../assets/images/avatar.jpg" width="120">
-            </td>
-            <td>
-                Xin chào! Tôi là Lâm Trần Quế Chi, sinh viên ngành Công nghệ thông tin.  
-                Tôi yêu thích lập trình và thiết kế web.  
-                Mục tiêu của tôi là trở thành lập trình viên chuyên nghiệp.
-            </td>
-        </tr>
-    </table>
+            document.getElementById(id).classList.remove("hidden");
+        }
+    </script>
 
-    <h3>Thông tin chi tiết</h3>
+    <!-- MENU BUTTON -->
+    <div class="menu">
+        <button onclick="showSection('intro')">Giới thiệu</button>
+        <button onclick="showSection('info')">Thông tin</button>
+        <button onclick="showSection('hobby')">Sở thích</button>
+        <button onclick="showSection('skill')">Kỹ năng</button>
+    </div>
 
-    <table border="1" cellpadding="8">
-        <tr>
-            <th>Thông tin</th>
-            <th>Nội dung</th>
-        </tr>
-        <tr>
-            <td>Họ tên</td>
-            <td>Lâm Trần Quế Chi</td>
-        </tr>
-        <tr>
-            <td>Tuổi</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>Lớp</td>
-            <td>DA24TTA</td>
-        </tr>
-        <tr>
-            <td>Trường</td>
-            <td>Đại học Trà Vinh</td>
-        </tr>
-    </table>
+    <!-- GIỚI THIỆU -->
+    <div id="intro" class="section">
+        <h3>Giới thiệu bản thân</h3>
 
-    <h3>Sở thích</h3>
-    <ul>
-        <li>Nghe nhạc</li>
-        <li>Xem phim</li>
-        <li>Chơi thể thao</li>
-    </ul>
+        <table>
+            <tr>
+                <td width="150">
+                    <img src="../assets/images/avatar.jpg" width="200" alt="Ảnh đại diện">
+                </td>
+                <td>
+                    Xin chào! Tôi là <strong>Lâm Trần Quế Chi</strong>, sinh viên ngành <a href="https://www.tvu.edu.vn/cong-nghe-thong-tin-dai-hoc-tra-vinh-7480201/"  target="_blank" class="pink-link">Công Nghệ Thông tin</a>!<br>
+                    Tôi yêu thích lập trình và thiết kế web!<br>
+                    Mục tiêu của tôi là trở thành lập trình viên!
+                </td>
+            </tr>
+        </table>
+    </div>
 
-    <h3>Kỹ năng và mục tiêu</h3>
-    <ol>
-        <li>Biết HTML cơ bản</li>
-        <li>Đang học CSS và JavaScript</li>
-        <li>Làm website cá nhân</li>
-    </ol>
+    <!-- THÔNG TIN -->
+    <div id="info" class="section hidden">
+        <h3>Thông tin chi tiết</h3>
+        <table>
+            <tr><th>Thông tin</th><th>Nội dung</th></tr>
+            <tr><td>Họ tên</td><td>Lâm Trần Quế Chi</td></tr>
+            <tr><td>Tuổi</td><td>20</td></tr>
+            <tr><td>Lớp</td><td>DA24TTA</td></tr>
+            <tr><td>Trường</td><td>Đại học Trà Vinh</td></tr>
+        </table>
+    </div>
 
-    <h3>Trang yêu thích của tôi</h3>
-    <p>
-        Facebook: <a href="http://facebook.com">Trang Facebook của tôi</a>
-    </p>
+    <!-- SỞ THÍCH -->
+    <div id="hobby" class="section hidden">
+        <h3>Sở thích</h3>
+        <ul>
+            <li>Nghe nhạc</li>
+            <li>Xem phim</li>
+            <li>Chơi thể thao</li>
+        </ul>
+    </div>
+
+    <!-- KỸ NĂNG -->
+    <div id="skill" class="section hidden">
+        <h3>Kỹ năng và mục tiêu</h3>
+        <ol>
+            <li>Biết HTML cơ bản</li>
+            <li>Đang học CSS và JavaScript</li>
+            <li>Làm website cá nhân</li>
+        </ol>
+    </div>
 
 </body>
 </html>
