@@ -1,0 +1,28 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+input{
+    margin: top 10px; 
+    padding: 8px;
+    border: 1px solid rgb(221, 57, 194);
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+}
+
+button:hover{
+    background: pink;
+}
+
+#kq {
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: center;
+
+}
