@@ -31,7 +31,7 @@ input {
 }
 
 button {
-    width: 100%; padding: 10px; 
+    padding: 10px; 
     margin-top: 10px; 
     box-sizing: border-box; 
     border: none; 
@@ -40,6 +40,27 @@ button {
     color: white; 
     cursor: pointer;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > button[type="submit"] {
+    align-self: flex-end;
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.luachon button {
+    flex: 1;
+    width: auto;
+}
+
 button:hover {
     background-color: #df76ae;
     color: rgb(0, 0, 0);
@@ -57,7 +78,7 @@ button:hover {
     text-decoration: underline; 
 }
 
-#title{
+.title{
     text-align: center;
    font-size: 40px;
     margin: 5px 0; 
@@ -75,10 +96,6 @@ a:hover {
 #backToLogin, #backLogin2{
     display: block;
 }
-
-.forgot { 
-    display: none; 
-} 
 
 #forgot { 
     display: none; 
