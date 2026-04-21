@@ -1,20 +1,32 @@
-function inBangCC() {
+function la_so() {
     let num = document.getElementById("so").value;
 
     if (num.trim() === "" || isNaN(num)) {
-        document.getElementById("kq").innerHTML = " Vui lòng nhập số!";
-        return;
+        document.getElementById("kq").style.display = "block";
+        document.getElementById("kq").innerHTML = "<span style='color:red'>Số nhập không hợp lệ!</span>";
+        return false;
     }
 
     let n = parseInt(num);
 
-    // kiểm tra 1-9
     if (n < 1 || n > 9) {
-        document.getElementById("kq").innerHTML = " Chỉ nhập số từ 1 đến 9!";
-        return;
+        document.getElementById("kq").style.display = "block";
+        document.getElementById("kq").innerHTML = "<span style='color:red'>Làm theo chỉ dẫn đi chớ😏</span>";
+        return false;
     }
 
-    let s = "<h3>Bảng cửu chương " + n + "</h3>";
+    return n; 
+}
+
+function in_bang_cc() {
+    let n = la_so();
+
+    // nếu sai thì dừng
+    if (n === false) return;
+
+    document.getElementById("kq").style.display = "block";
+
+    let s = "";
 
     for (let i = 1; i <= 10; i++) {
         s += n + " x " + i + " = " + (n * i) + "<br>";

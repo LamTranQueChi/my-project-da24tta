@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+
+    /*2 định dạng tiếp theo là tạo nền chuyển màu full screen nhoa */
+    background: linear-gradient(135deg, #412a39, #e62db1);
+    height: 100vh;   /* bỏ ra thì xú lắm*/
+
+    display: flex; /* cho cái nội dung ra giữa*/
+    justify-content: center; /*căn giữa theo chiều ngang*/
+    align-items: center; /* căn giữa theo chièu dọc lun cho ẹp*/
+}
+
+
+.form-table {
+    background: rgba(255, 255, 255, 0.08); /* chỉnh màu cho cái khung */
+    border-radius: 15px; /* bo góc tí */
+    padding: 25px 35px; /* k/c bên trong */
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);  /* bóng với màu bóng */
+    color: white; /* chữ trắng */
+}
+
+/* chỉnh ô trong bảng */
+.form-table td {
+    padding: 12px 10px; /* k/c của một phần tử với cái viền ô trong một cái ô */
+}
+
+
+label {
+    font-weight: bold; /* chữ đậm */
+}
+
+input {
+    width: 200px; /* rộng */
+    padding: 10px;  /* k/c  */
+    border-radius: 8px; /* bo */
+    border: none; /* bỏ viền mặc định tại kh thích */
+    outline: none; /* bỏ viền khi click */
+    background: rgba(255,255,255,0.15); /* màu nền */
+    color: white; /* chữ trắng */
+}
+
+::placeholder {
+    color: #ccc;  /*chữ gợi ý màu xám nhạt dễ dòm với màu khung */
+}
+
+input:focus {
+    box-shadow: 0 0 10px #00f5d4; /* bóng của cái khung í*/
+}
+
+#thanhtien {
+    background: rgba(53, 32, 32, 0.4); /* bóng */ 
+    font-weight: bold; /* kq nổi bật */ 
+    color: #ffffff; /* chữ trắng */ 
+    box-shadow: 0 0 10px #f9f4f8 inset; /* bóng nó bên trong */ 
+}
+
+h2 {
+    position: absolute; /*margin nó bị đá với css body*/
+    top: 80px; /*cách mép trên 80px*/
+    color: white; /* tiêu đề trắng */ 
+    text-align: center; /* căn giữa */ 
+    font-size: 60px;   /* tiêu đề chống cận*/ 
+
+}

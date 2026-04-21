@@ -1,28 +1,67 @@
 body {
-    font-family: Arial;
-    text-align: center;
-    margin-top: 50px;
-    justify-content: center;
+    font-family: Arial, sans-serif; /* phông chữ */
+    background:  #67d1f7; /* màu nền */
+    display: flex;  /* căn tổng bố cục*/
+    flex-direction: column; /* sắp xếp phần tử theo chiều dọc */
+    align-items: center;  /* căn giữa lun */
 }
 
-input{
-    margin: top 10px; 
-    padding: 8px;
-    border: 1px solid rgb(221, 57, 194);
+
+h3 {
+    margin: 40px; /* k/c của tiêu đề với mọi phần tử */
+    color: white; /* màu cho tiu đề */
+    letter-spacing: 1px; /* k/c chữ */
+    font-size: 60px;   /* kích thước chống cận hihi */
+}
+
+#nhapso {
+    margin-top: 30px; /*cách phía trên cái khung một khoảng*/
+    background: white; /* trắng tinh khiết */
+    padding: 20px 25px; /* trên dưới hai chục, trái phải hai lăm */
+    border-radius: 12px; /* Bo góc tí cho ẹp */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* đổ bóng theo cảm tính, rgba để chỉnh bóng màu  */
+}
+
+label {
+    font-weight: bold; /* chữ rậm */
+    margin-right: 10px; /*cái chữ bcc nó cách cái chỗ nhập số 1 tẹo*/
+}
+
+input {
+    padding: 8px 10px; /* kích thước ô nhập*/
+    border-radius: 6px;  /* bo góc tí */
+    border: 1px solid #ccc;  /* viền liền và xám */
+    
 }
 
 button {
-    padding: 5px;
-    margin: 5px;
+    margin-left: 10px; /*cách input ra*/
+    padding: 8px 15px; /*nói chung là k/c giữa cái chữ với cái khung*/
+    border: none;  /* dị ứng viền nên bỏ cho ẹp*/
+    border-radius: 6px; /* bo típ cho ẹp*/
+    background: #4facfe; /*xanh mát mẻ*/
+    color: white; /*chữ trắng*/
+    cursor: pointer; /* đổi con trỏ chuột*/
 }
 
-button:hover{
-    background: pink;
+button:hover {
+    background: #f273bf; /* chạm vào button thì nữ tánh hẳn*/
+    transform: translateY(-2px); /* Cho cái nút nó nẩy lên hi*/
 }
 
 #kq {
-    margin-top: 15px;
-    font-size: 18px;
-    text-align: center;
-
+    margin-top: 30px;/* k/c của kq với cái khung ở trên*/
+    padding: 15px; /* kk/c nội dung với cái khung*/
+    background: white;
+    border-radius: 10px;  /* bo*/
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* tất cả vì muốn làm màu hi*/
+    font-size: 20px; /* vừa đủ đọc*/
+    line-height: 1.8; /* giúp đỡ con mắt*/
+    text-align: center; /* chống OCD*/
+    width: 100%;  /* cho cái thông báo nó không xún dòng tùy tiện*/
+    max-width: 300px;  /* chiều rộng*/
+    white-space: normal;  /* nếu mà nội dung dài thì được xún dòng*/
+    display: none; /* ẩn cái khung, nếu nhập hợp lệ thì không có hiện*/
 }
+
+

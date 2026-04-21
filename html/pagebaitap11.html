@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập số 11</title>
+    <link rel="stylesheet" href="../css/baitap11.css">
+</head>
+
+<body>
+
+     <h2>Tính thành tiền</h2>
+
+    <table class="form-table">
+    <tr>
+        <td>
+            <label>Số lượng</label>
+        </td>
+        <td>
+            <input type="text" id="soluong" onkeyup="tinhTien()" placeholder="Nhập số lượng...">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Đơn giá</label>
+        </td>
+        <td>
+            <input type="text" id="dongia" onkeyup="tinhTien()" placeholder="Nhập giá...">
+        </td>
+    </tr>
+
+    <tr>
+        <td><label>Thành tiền</label></td>
+        <td>
+            <input type="text" id="thanhtien" readonly> VND
+        </td>
+    </tr>
+</table>
+
+    <script src="../js/baitap11.js"></script>
+
+</body>
+</html>
