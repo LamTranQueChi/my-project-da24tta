@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi mật khẩu</title>
+    <link rel="stylesheet" href="../css/baitap15.css">
+</head>
+<body>
+
+<form>
+    <table>
+        <tr>
+            <td colspan="2" align="center"><h3>Thay đổi mật khẩu</h3></td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" id="email"></td>
+        </tr>
+
+        <tr>
+            <td>Tên đăng nhập:</td>
+            <td><input type="text" id="username"></td>
+        </tr>
+
+        <tr>
+            <td>Mật khẩu cũ:</td>
+            <td><input type="password" id="oldPass"></td>
+        </tr>
+
+        <tr>
+            <td>Mật khẩu mới:</td>
+            <td><input type="password" id="newPass"></td>
+        </tr>
+
+        <tr>
+            <td>Nhập lại mật khẩu:</td>
+            <td><input type="password" id="rePass"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <!-- đổi thành button thường -->
+                <button type="button" onclick="ktform()">Gửi</button>
+            </td>
+        </tr>
+
+        <!-- dòng hiển thị lỗi, nếu khg có lỗi thì nó vẫn ở đó-->
+        <tr>
+            <td colspan="2" id="error-cell">
+                <div id="error"></div>
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+<script src="../js/baitap15.js"></script>
+</body>
+</html>

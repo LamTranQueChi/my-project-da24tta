@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+
+    /* lấy màu với định dạng giống của baitap11 tại đẹp hihi*/
+    background: linear-gradient(135deg, #412a39, #e62db1);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+td, th {
+    border: 2px solid #ff6ec7;
+    padding: 10px;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+input {
+    padding: 8px;
+    width: 220px;
+    border: none;
+    border-radius: 5px;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px #00f5d4;
+    outline: none;
+}
+
+/* nút Nộp nò*/
+button {
+    padding: 10px 20px;
+    background: #ff6ec7;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #37212f;
+}
+
+#error-cell {
+    text-align: center; /* căn giữa theo ngang */
+}
+
+#error {
+    color: rgb(238, 220, 79);
+    font-weight: bold;
+    display: none;
+}
