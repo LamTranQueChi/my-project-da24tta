@@ -3,7 +3,7 @@ const productList = [
     {
         id: 1,
         name: "Hoa hồng đỏ",
-        price: "25000 / 30 hạt",
+        price: "25000 VND / 30 hạt",
         image: "../assets/images/hoahong.jpg",
         desc: "Hoa hồng đỏ mang vẻ đẹp quyến rũ và hương thơm dịu nhẹ, thích hợp trồng trong sân vườn hoặc ban công. Từng cánh hoa mềm mại tượng trưng cho tình yêu và sự lãng mạn. Chỉ cần chăm sóc đúng cách, cây sẽ nở rực rỡ quanh năm và làm không gian sống trở nên đầy sức sống."
     },
@@ -11,7 +11,7 @@ const productList = [
     {
         id: 2,
         name: "Hoa Tulip hồng",
-        price: "75000 / 5 củ",
+        price: "75000 VND / 5 củ",
         image: "../assets/images/tuliphong.jpg",
         desc: "Tulip hồng nổi bật với màu sắc thanh lịch và sang trọng. Loài hoa này thường nở vào mùa xuân, tạo nên khung cảnh nhẹ nhàng và tinh tế. Từ những khu vườn châu Âu nổi tiếng, Tulip đã trở thành biểu tượng của sự hạnh phúc và những khởi đầu tươi mới."
     },
@@ -19,7 +19,7 @@ const productList = [
     {
         id: 3,
         name: "Hướng dương đỏ",
-        price: "25000 / 20 hạt",
+        price: "25000 VND / 20 hạt",
         image: "../assets/images/huongduong.jpg",
         desc: "Hoa hướng dương đỏ luôn hướng về phía mặt trời như biểu tượng của niềm tin và hy vọng. Những cánh hoa vàng rực rỡ mang lại cảm giác tích cực và đầy năng lượng. Đây là lựa chọn phù hợp để trang trí sân vườn hoặc làm quà tặng với ý nghĩa động viên, khích lệ."
     },
@@ -27,7 +27,7 @@ const productList = [
     {
         id: 4,
         name: "Hoa ly trắng",
-        price: "30000 / củ",
+        price: "30000 VND / củ",
         image: "../assets/images/hoaly.jpg",
         desc: "Hoa ly trắng sở hữu vẻ đẹp sang trọng cùng hương thơm dịu dàng đặc trưng. Loài hoa này thường xuất hiện trong những dịp quan trọng như lễ cưới hoặc trang trí không gian sống. Khi nở rộ, cẩm ly tạo cảm giác ấm áp, thanh lịch và mang đến nét đẹp đầy tinh tế."
     },
@@ -35,7 +35,7 @@ const productList = [
     {
         id: 5,
         name: "Hoa oải lavender",
-        price: "45000 / 20 hạt",
+        price: "45000 VND / 20 hạt",
         image: "../assets/images/Lavender.jpg",
         desc: "Hoa oải hương true lavender nổi tiếng với sắc tím nhẹ nhàng và hương thơm thư giãn đặc trưng. Những cánh đồng Lavender trải dài luôn mang lại cảm giác bình yên và thơ mộng. Loài hoa này không chỉ dùng để trang trí mà còn giúp tạo không gian dễ chịu, thích hợp cho những phút giây nghỉ ngơi."
     },
