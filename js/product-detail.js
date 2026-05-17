@@ -10,9 +10,9 @@ const productList = [
 
     {
         id: 2,
-        name: "Hoa Tulip Hà Lan",
+        name: "Hoa Tulip hồng",
         price: "75000 / 5 củ",
-        image: "../assets/images/tulip.jpg",
+        image: "../assets/images/tuliphong.jpg",
         desc: "Tulip Hà Lan nổi bật với màu sắc thanh lịch và sang trọng. Loài hoa này thường nở vào mùa xuân, tạo nên khung cảnh nhẹ nhàng và tinh tế. Từ những khu vườn châu Âu nổi tiếng, Tulip đã trở thành biểu tượng của sự hạnh phúc và những khởi đầu tươi mới."
     },
 
