@@ -103,17 +103,11 @@ const defaultProductList = [
     }
 ];
 
-
 let productList = JSON.parse(localStorage.getItem(storageKey));
 
 if (!Array.isArray(productList)) {
-
     productList = defaultProductList;
-
-    localStorage.setItem(
-        storageKey,
-        JSON.stringify(defaultProductList)
-    );
+    localStorage.setItem(storageKey, JSON.stringify(productList));
 }
 
 function addProduct(id, name, price, image, link)
@@ -185,9 +179,6 @@ function renderProducts(list)
     });
 }
 
-function refreshUI(list = productList) {
-    refreshUI();
-}
 
 function toggleContact() {
     const contact = document.getElementById("contactInfo");
@@ -203,7 +194,7 @@ function toggleContact() {
 function filterProduct(category)
 {
     const filtered = productList.filter(
-        p => p.category === category && !p.hidden
+        p => p.category === category && !p.hidden 
     );
 
     renderProducts(filtered);
@@ -266,5 +257,13 @@ function showDeletedProducts()
     renderProducts(deletedProducts);
 }
 
+function resetProducts() {
+    localStorage.removeItem(storageKey);
+    productList = structuredClone(defaultProductList);
+    localStorage.setItem(storageKey, JSON.stringify(productList));
+    renderProducts(productList.filter(p => !p.hidden));
+}
+
 renderProducts(productList.filter(p => !p.hidden));
 updateDeletedList();
+saveData();

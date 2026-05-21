@@ -62,8 +62,8 @@ const defaultProductList = [
         price: "40000 VND / 30 hạt",
         image: "../assets/images/hongtrang.jpg",
         desc: "Hoa hồng trắng nổi bật với vẻ đẹp tinh khôi và thanh lịch, mang đến cảm giác nhẹ nhàng và sang trọng cho mọi không gian sống. Những cánh hoa mềm mại tượng trưng cho sự thuần khiết, chân thành và những tình cảm tốt đẹp, rất thích hợp để trang trí sân vườn, ban công hoặc làm quà tặng ý nghĩa trong những dịp đặc biệt. Với hương thơm dịu nhẹ cùng vẻ đẹp tinh tế, hoa hồng trắng không chỉ giúp không gian thêm tươi mới và nổi bật mà còn tạo cảm giác thư giãn, bình yên và đầy cuốn hút mỗi ngày.",
-        productLink: "product-detail.html?id=5",
-        category: "lavender",
+        productLink: "product-detail.html?id=6",
+        category: "hong",
         hidden: false
     },
 
@@ -113,10 +113,12 @@ const defaultProductList = [
 ];
 
 let productList = JSON.parse(localStorage.getItem(storageKey));
-if (!Array.isArray(productList)) {
+
+if (!Array.isArray(productList) || productList.length === 0) {
     productList = defaultProductList;
     localStorage.setItem(storageKey, JSON.stringify(defaultProductList));
 }
+
 
 // lấy id từ URL
 const params = new URLSearchParams(window.location.search);
@@ -124,6 +126,7 @@ const id = parseInt(params.get("id"));
 
 // tìm sản phẩm
 const product = productList.find(item => item.id === id);
+console.log("product:", product);
 
 //Container
 const detailContainer = document.getElementById("product-detail");
@@ -178,23 +181,27 @@ if(product)
 
     //Xóa (ẩn sp)
     deleteBtn.onclick = function () {
-        product.hidden = true;
+        const index = productList.findIndex(p => p.id === product.id);
 
-        localStorage.setItem(storageKey, JSON.stringify(productList));
+        if (index !== -1) {
+            productList[index].hidden = true;
+            localStorage.setItem(storageKey, JSON.stringify(productList));
+        }
 
         alert("Đã xóa sản phẩm");
-
-        window.location.href = "pagedshoa.html"; 
+        window.location.href = "pagedshoa.html";
     };
 
     //khoi phục
     restoreBtn.onclick = function () {
-        product.hidden = false;
+        const index = productList.findIndex(p => p.id === product.id);
 
-        localStorage.setItem(storageKey, JSON.stringify(productList));
+        if (index !== -1) {
+            productList[index].hidden = false;
+            localStorage.setItem(storageKey, JSON.stringify(productList));
+        }
 
         alert("Đã khôi phục sản phẩm");
-
         window.location.href = "pagedshoa.html";
     };
 
