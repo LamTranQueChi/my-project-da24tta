@@ -7,12 +7,13 @@ body {
 /* Banner */
 .banner {
     text-align: center;
-    margin: 30px 0;
+    margin: 30px 160px;
 }
 
 .banner img {
-   width: 95%;
-    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: 15px;
 }
 
@@ -20,20 +21,14 @@ body {
 .page-title {
     text-align: center;
     color: #d63384;
-}
-
-/* Danh sách sản phẩm */
-#product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-bottom: 20px;
 }
 
 /* Card sản phẩm */
 .product-item {
-     width: 300px;
+    width: 260px;
     background: white;
-    margin: 15px;
+    margin: 35px;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -47,12 +42,11 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
-
     border-radius: 10px;
     border: 1px solid #ccc;
 }
 
-/* Nd sản phẩm */
+/* Nội dung sản phẩm */
 .product-info {
     padding: 16px;
     display: flex;
@@ -92,39 +86,38 @@ body {
     color: white;
 }
 
-/* Footer */
-.footer{
+/* Header */
+.header{
     background: #fff;
     padding: 20px 20px;
     box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* Logo */
-.footer-logo{
+.header-logo{
     text-align: center;
     margin-bottom: 10px;
     border-bottom: 2px solid #eee;
     padding: 10px 20px;
 }
 
-.footer-logo img{
+.header-logo img{
     width: 200px;
     display: block;
-    margin: 0 auto;
-   
+    margin: 0 auto;  
 }
-
-/* Menu */
-.footer-menu{
+ 
+/* Menu*/
+.header-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
 }
 
 /* List */
-.footer-column ul{
+.header-column ul{
     display: flex;
     gap: 25px;
     list-style: none;
@@ -132,17 +125,17 @@ body {
     margin: 0;
 }
 
-.footer-column a{
+.header-column a{
     color: #333;
     text-decoration: none;
     font-weight: bold;
 }
 
-.footer-column a:hover{
+.header-column a:hover{
     color: #f195c3;
 }
 
-.footer-column p{
+.header-column p{
     margin: 5px 0;
 }
 
@@ -165,7 +158,7 @@ body {
     margin-top: 15px;
 }
 
-.footer-topbar{
+.header-topbar{
     background: #f195c3;
     color: white;
     text-align: center;
@@ -183,4 +176,34 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     margin-top: 50px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+#product-list{
+    justify-content: center;
+    gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Xóa sản phẩm */
+#deletedBanner{
+color: rgb(255, 46, 46);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 470px;
+
+}
+
+#deletedBanner:hover{
+    color: #cc0000;
 }

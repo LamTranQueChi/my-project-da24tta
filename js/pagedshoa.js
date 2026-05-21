@@ -1,11 +1,15 @@
-const productList = [
+
+const storageKey = "productList";
+
+const defaultProductList = [
     {
         id: 1,
         name: "Hoa hồng đỏ",
         price: "25000 VND / 30 hạt",
         image: "../assets/images/hoahong.jpg",
         productLink: "product-detail.html?id=1",
-        category: "hong"
+        category: "hong",
+        hidden: false
     },
 
     {
@@ -14,7 +18,8 @@ const productList = [
         price: "75000 VND / 5 củ ",
         image: "../assets/images/tuliphong.jpg",
         productLink: "product-detail.html?id=2",
-        category: "tulip"
+        category: "tulip",
+        hidden: false
     },
 
     {
@@ -23,7 +28,8 @@ const productList = [
         price: "25000 VND / 20 hạt",
         image: "../assets/images/huongduong.jpg",
         productLink: "product-detail.html?id=3",
-        category: "huongduong"
+        category: "huongduong",
+        hidden: false
     },
 
     {
@@ -32,7 +38,8 @@ const productList = [
         price: "30000 VND / củ",
         image: "../assets/images/hoaly.jpg",
         productLink: "product-detail.html?id=4",
-        category: "ly"
+        category: "ly",
+        hidden: false
     },
 
     {
@@ -41,54 +48,73 @@ const productList = [
         price: "45000 VND / 20 hạt",
         image: "../assets/images/Lavender.jpg",
         productLink: "product-detail.html?id=5",
-        category: "lavender"
+        category: "lavender",
+        hidden: false
     },
 
     {
-    id: 6,
-    name: "Hoa hồng trắng",
-    price: "40000 VND / 30 hạt",
-    image: "../assets/images/hongtrang.jpg",
-    productLink: "product-detail.html?id=6",
-    category: "hong"
-},
+        id: 6,
+        name: "Hoa hồng trắng",
+        price: "40000 VND / 30 hạt",
+        image: "../assets/images/hongtrang.jpg",
+        productLink: "product-detail.html?id=6",
+        category: "hong",
+        hidden: false
+    },
 
-{
-    id: 7,
-    name: "Hoa ly vàng",
-    price: "40000 VND / củ",
-    image: "../assets/images/lyvang.jpg",
-    productLink: "product-detail.html?id=7",
-    category: "ly"
-},
+    {
+        id: 7,
+        name: "Hoa ly vàng",
+        price: "40000 VND / củ",
+        image: "../assets/images/lyvang.jpg",
+        productLink: "product-detail.html?id=7",
+        category: "ly",
+        hidden: false
+    },
 
-{
-    id: 8,
-    name: "Tulip vàng",
-    price: "85000 VND / 5 củ",
-    image: "../assets/images/tulipvang.jpg",
-    productLink: "product-detail.html?id=8",
-    category: "tulip"
-},
+    {
+        id: 8,
+        name: "Tulip vàng",
+        price: "85000 VND / 5 củ",
+        image: "../assets/images/tulipvang.jpg",
+        productLink: "product-detail.html?id=8",
+        category: "tulip",
+        hidden: false
+    },
 
-{
-    id: 9,
-    name: "Hướng dương vàng",
-    price: "20000 VND / 20 hạt",
-    image: "../assets/images/huongduongvang.jpg",
-    productLink: "product-detail.html?id=9",
-    category: "huongduong"
-},
+    {
+        id: 9,
+        name: "Hướng dương vàng",
+        price: "20000 VND / 20 hạt",
+        image: "../assets/images/huongduongvang.jpg",
+        productLink: "product-detail.html?id=9",
+        category: "huongduong",
+        hidden: false
+    },
 
-{
-    id: 10,
-    name: "Hoa spike lavender",
-    price: "50000 VND / 25 hạt",
-    image: "../assets/images/oaihuongspikelvd.jpg",
-    productLink: "product-detail.html?id=10",
-    category: "lavender"
-}
+    {
+        id: 10,
+        name: "Hoa spike lavender",
+        price: "50000 VND / 25 hạt",
+        image: "../assets/images/oaihuongspikelvd.jpg",
+        productLink: "product-detail.html?id=10",
+        category: "lavender",
+        hidden: false
+    }
 ];
+
+
+let productList = JSON.parse(localStorage.getItem(storageKey));
+
+if (!Array.isArray(productList)) {
+
+    productList = defaultProductList;
+
+    localStorage.setItem(
+        storageKey,
+        JSON.stringify(defaultProductList)
+    );
+}
 
 function addProduct(id, name, price, image, link)
 {
@@ -140,18 +166,28 @@ function addProduct(id, name, price, image, link)
     productContainer.appendChild(productItem);
 }
 
-productList.forEach(function(product) {
+function renderProducts(list)
+{
+    const container = document.getElementById("product-list");
 
-    addProduct(
-        product.id,
-        product.name,
-        product.price,
-        product.image,
-        product.productLink,
-        product.desc
-    );
+    container.innerHTML = "";
 
-});
+    list.forEach(product => {
+
+        addProduct(
+            product.id,
+            product.name,
+            product.price,
+            product.image,
+            product.productLink
+        );
+
+    });
+}
+
+function refreshUI(list = productList) {
+    refreshUI();
+}
 
 function toggleContact() {
     const contact = document.getElementById("contactInfo");
@@ -166,39 +202,69 @@ function toggleContact() {
 
 function filterProduct(category)
 {
-    document.getElementById("product-list").innerHTML = "";
+    const filtered = productList.filter(
+        p => p.category === category && !p.hidden
+    );
 
-    productList.forEach(function(product){
-
-        if(product.category === category)
-        {
-            addProduct(
-                product.id,
-                product.name,
-                product.price,
-                product.image,
-                product.productLink
-            );
-        }
-
-    });
+    renderProducts(filtered);
 }
 
+//Hiện sp bình thường
 function showAllProduct()
 {
-    //Xóa danh sách cũ
-    document.getElementById("product-list").innerHTML = "";
+    const activeProducts = productList.filter(
+        p => !p.hidden
+    );
+    renderProducts(activeProducts);
+}
 
-    //Hiện lại toàn bộ sản phẩm
-    productList.forEach(function(product){
+function changeBanner(imageName){
+    document.getElementById("banner-image").src =
+        "../assets/images/" + imageName;
+}
 
-        addProduct(
-            product.id,
-            product.name,
-            product.price,
-            product.image,
-            product.productLink
-        );
+//them sản phẩm đã xóa
+function updateDeletedList() {
+    const list = document.getElementById("deletedList");
+    const panel = document.getElementById("deletedPanel");
 
+    if (!list || !panel) return;
+
+    list.innerHTML = "";
+
+    const deleted = productList.filter(p => p.hidden);
+
+    if (deleted.length === 0) {
+        panel.style.display = "none";
+        return;
+    }
+
+    panel.style.display = "block";
+
+    deleted.forEach(p => {
+        const li = document.createElement("li");
+        li.innerText = p.name;
+
+        li.onclick = function () {
+            window.location.href = `product-detail.html?id=${p.id}`;
+        };
+
+        list.appendChild(li);
     });
 }
+
+function saveData() {
+    localStorage.setItem("productList", JSON.stringify(productList));
+}
+
+function showDeletedProducts()
+{
+    const deletedProducts = productList.filter(
+        p => p.hidden
+    );
+
+    renderProducts(deletedProducts);
+}
+
+renderProducts(productList.filter(p => !p.hidden));
+updateDeletedList();

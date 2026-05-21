@@ -13,62 +13,74 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <footer class="footer">
+     <header class="header">
 
-    <div class="footer-topbar">
+    <div class="header-topbar">
         8:00 - 21:00 | Thứ 2 - Chủ nhật
     </div>
 
     <!-- Logo -->
-    <div class="footer-logo">
+    <div class="header-logo">
         <img src="../assets/images/Logo.jpg" alt="Logo">
     </div>
 
     <!-- Danh mục -->
-    <div class="footer-menu">
+    <div class="header-menu">
 
-        <div class="footer-column">
+        <div class="header-column">
 
             <ul>
                 <li>
-                    <a href="#" onclick="showAllProduct()">
+                    <a href="#" 
+                     onclick="showAllProduct(); changeBanner('Nenhoa.jpg')">
                         Tất cả ▾
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" onclick="filterProduct('hong')">
+                    <a href="#" 
+                     onclick="filterProduct('hong'); changeBanner('bannerhoahong.jpg')">
                         Hoa hồng ▾
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" onclick="filterProduct('tulip')">
+                    <a href="#" 
+                     onclick="filterProduct('tulip'); changeBanner('bannertulip.jpg')">
                         Hoa tulip ▾
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" onclick="filterProduct('huongduong')">
+                    <a href="#" 
+                     onclick="filterProduct('huongduong'); changeBanner('bannerhuongduong.jpg')">
                         Hoa hướng dương ▾
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" onclick="filterProduct('ly')">
+                    <a href="#" 
+                     onclick="filterProduct('ly'); changeBanner('bannerhoaly.jpg')">
                         Hoa ly ▾
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" onclick="filterProduct('lavender')">
+                    <a href="#" 
+                     onclick="filterProduct('lavender'); changeBanner('bannerlavender.jpg')">
                         Hoa lavender ▾
                     </a>
                 </li>
             </ul>
         </div>
+            
+        <div id="deletedBanner" onclick="showDeletedProducts()">
+            Sản phẩm đã xóa ▾
+        </div>
 
-        <div class="footer-column">
+        
+
+        <div class="header-column">
             <button class="contact-btn" onclick="toggleContact()">
                 Liên hệ
             </button>
@@ -79,12 +91,16 @@
             <p>Địa chỉ: phường Trà Vinh, Tp.Trà Vinh, tỉnh Vĩnh Long</p>
         </div>
     </div>
-    </footer>
+
+     
+    </header>
 
     <div class="banner">
-        <img src="../assets/images/Nenhoa.jpg" alt="Banner hoa">
+        <img id="banner-image"
+     src="../assets/images/Nenhoa.jpg"
+     alt="Banner hoa">
     </div>
-
+    
     <div class="container" id="container">
         
         <h2 class="page-title">Danh sách sản phẩm hoa</h2>
