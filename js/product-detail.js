@@ -1,9 +1,11 @@
 
+// Tên dữ liệu lưu trong localStorage
 const storageKey = "productList";
 
-
+//Giữ dữ liệu sản phẩm không bị mất và tạo dữ liệu mặc định khi mở web lần đầu
 let productList = JSON.parse(localStorage.getItem(storageKey));
 
+// Nếu dữ liệu không hợp lệ hoặc rỗng
 if (!Array.isArray(productList) || productList.length === 0) {
     productList = defaultProductList;
     localStorage.setItem(storageKey, JSON.stringify(defaultProductList));

@@ -223,34 +223,37 @@ function filterProduct(category)
 //Hiện sp bình thường, chưa bị ẩn
 function showAllProduct()
 {
-    const activeProducts = productList.filter(
+    const activeProducts = productList.filter(  // Lọc các sản phẩm chưa bị ẩn
         p => !p.hidden
     );
-    renderProducts(activeProducts);
+    renderProducts(activeProducts);  // Hiển thị tất cả sản phẩm
 }
 
 function changeBanner(imageName){
+     // Đổi hình banner
     document.getElementById("banner-image").src =
-        "../assets/images/" + imageName;
+        "../assets/images/" + imageName;   // Gắn đường dẫn
 }
 
-//them sản phẩm đã xóa
+//hiển thị lại sản phẩm đã xóa
 function updateDeletedList() {
+    //lấy danh sách
     const list = document.getElementById("deletedList");
     const panel = document.getElementById("deletedPanel");
 
-    if (!list || !panel) return;
+    if (!list || !panel) return;//đk nếu kh tồn tại thì dừng
 
-    list.innerHTML = "";
+    list.innerHTML = ""; //xóa dl cũ
 
     const deleted = productList.filter(p => p.hidden);
 
+      // Nếu không có sản phẩm đã xóa
     if (deleted.length === 0) {
-        panel.style.display = "none";
+        panel.style.display = "none"; // ẩn khung hiển thị nd
         return;
     }
 
-    panel.style.display = "block";
+    panel.style.display = "block"; //Hiện khung 
 
     deleted.forEach(p => {
         const li = document.createElement("li");
@@ -260,30 +263,32 @@ function updateDeletedList() {
             window.location.href = `product-detail.html?id=${p.id}`;
         };
 
-        list.appendChild(li);
+        list.appendChild(li); // thêm vào ds
     });
 }
-
+// lưu ds sp vào localStorage xong chuyển mảng thành chuỗi JSON
 function saveData() {
     localStorage.setItem("productList", JSON.stringify(productList));
 }
 
+//Hiển thị danh sách sản phẩm đã bị xóa / bị ẩn
 function showDeletedProducts()
 {
     const deletedProducts = productList.filter(
         p => p.hidden
     );
 
-    renderProducts(deletedProducts);
+    renderProducts(deletedProducts);//Hiển thị sp đã xó
 }
 
+//reset dữ liệu sp, cho ds về trạng thái đầu
 function resetProducts() {
-    localStorage.removeItem(storageKey);
-    productList = structuredClone(defaultProductList);
-    localStorage.setItem(storageKey, JSON.stringify(productList));
-    renderProducts(productList.filter(p => !p.hidden));
+    localStorage.removeItem(storageKey); // Xóa dữ liệu cũ trong localStorage
+    productList = structuredClone(defaultProductList);   // Khôi phục dữ liệu mặc định
+    localStorage.setItem(storageKey, JSON.stringify(productList));  // Lưu dữ liệu mới
+    renderProducts(productList.filter(p => !p.hidden));   // Hiển thị sản phẩm chưa bị ẩn
 }
 
-renderProducts(productList.filter(p => !p.hidden));
-updateDeletedList();
-saveData();
+renderProducts(productList.filter(p => !p.hidden)); // Hiển thị sản phẩm khi mở web, nếu không có thì khi xóa sp và cập nhật lại web thì sp xóa vẫn sẽ hiện trên trang mặc đinhh
+updateDeletedList(); // Cập nhật danh sách sản phẩm đã xóa
+saveData(); // Lưu dl
